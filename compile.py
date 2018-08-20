@@ -3,12 +3,14 @@ import sys
 
 MAINSCRIPT = 'legender.py'
 DATA_FILES = []
-OPTIONS = {}
+OPTIONS = {"includes":"queue"}
 
 extra_options = None
 if sys.platform == 'darwin':
     import py2app
     sys.argv.append('py2app')
+    OPTIONS.update({'argv_emulation': 1,
+                    "no_chdir":1})
     extra_options = dict(
         setup_requires=['py2app'],
         data_files=DATA_FILES,
@@ -20,7 +22,7 @@ if sys.platform == 'darwin':
 elif sys.platform == 'win32':
     import py2exe
     sys.argv.append('py2exe')
-    OPTIONS = {'bundle_files': 1}
+    OPTIONS.update({'bundle_files': 1})
     extra_options = dict(
         setup_requires=['py2exe'],
         app=[MAINSCRIPT],

@@ -44,7 +44,7 @@ vfw,vid,video,viv,vivo,vob,vro,wm,wmv,wmx,wrap,wvx,wx,x264,xvid",
 # of multiple strings, when multiple config files are detected, settings are
 # loaded from all files in order, but saved only in the last
 config_filename = "config.ini"
-script_dir = os.path.dirname(os.path.realpath(__file__))
+script_dir = os.path.dirname(os.path.realpath(sys.argv[0]))
 
 # set this function if you need to load additional custom sections
 def load_sections():
