@@ -3,7 +3,7 @@ import sys
 
 MAINSCRIPT = 'legender.py'
 DATA_FILES = []
-OPTIONS = {"includes":"queue"}
+OPTIONS = {}
 
 extra_options = None
 if sys.platform == 'darwin':
@@ -17,17 +17,16 @@ if sys.platform == 'darwin':
         app=[MAINSCRIPT],
         # Cross-platform applications generally expect sys.argv to
         # be used for opening files.
-        options={'py2app': OPTIONS}
+        options={'py2app': OPTIONS,
+        "includes":"queue"}
     )
 elif sys.platform == 'win32':
     import py2exe
     sys.argv.append('py2exe')
     OPTIONS.update({'bundle_files': 1})
     extra_options = dict(
-        setup_requires=['py2exe'],
-        app=[MAINSCRIPT],
-        options={'py2app': OPTIONS},
-        #console = [{'script': MAINSCRIPT}],
+        options={'py2exe': OPTIONS},
+        console=[{'script': MAINSCRIPT}],
     )
 else:
     extra_options = dict(
