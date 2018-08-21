@@ -14,6 +14,8 @@ cd legender
 python compile
 ```
 
+py2exe needs python 3.4 or 2.7 in order to compile for now while its not yet updated for newer versions
+
 ## Basic Usage
 
 Legender accepts one or more parameters containing video file
