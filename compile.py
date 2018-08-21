@@ -10,15 +10,15 @@ if sys.platform == 'darwin':
     import py2app
     sys.argv.append('py2app')
     OPTIONS.update({'argv_emulation': 1,
-                    "no_chdir":1})
+                    "no_chdir":1,
+                    "includes":"queue"})
     extra_options = dict(
         setup_requires=['py2app'],
         data_files=DATA_FILES,
         app=[MAINSCRIPT],
         # Cross-platform applications generally expect sys.argv to
         # be used for opening files.
-        options={'py2app': OPTIONS,
-        "includes":"queue"}
+        options={'py2app': OPTIONS}
     )
 elif sys.platform == 'win32':
     import py2exe
