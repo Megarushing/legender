@@ -11,10 +11,10 @@ on Windows or Mac
 ```bash
 git clone https://github.com/Megarushing/legender.git
 cd legender
-python compile
+python compile.py
 ```
 
-py2exe needs python 3.4 or 2.7 in order to compile for now while its not yet updated for newer versions
+py2exe for windows needs python 3.4 or 2.7 for now in order to compile, this is necessary while its not yet updated for newer versions
 
 ## Basic Usage
 
@@ -64,7 +64,7 @@ tries to increment it 1 by 1 until finding a new accepted version
 ### recursive
 
 When specifying a folder for legender to find subtitles it looks for video files inside that specific folder,
-when enabled, recursive tells legender to navigate inside each subfolder in search for subtitles, and on.
+when enabled (1), recursive tells legender to navigate inside each subfolder in search for subtitles, and on untill there are no more folders to look into.
 
 It wont go inside symlinks
 
@@ -75,7 +75,7 @@ If the video already has a subtitle file for it, it wont download a new one unle
 ### languages
 
 This contains a list of languages to download, if no subtitles are found for the specified language it
-tries to find for another one
+tries to find the next language in line
 
 6 = Brazilian Portuguese
 
